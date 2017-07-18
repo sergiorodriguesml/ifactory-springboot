@@ -37,10 +37,6 @@ public class AuthorController {
 		return ResponseEntity.created(createdURL.toURI()).build();
 	}
 
-	
-	
-	
-	
 	@DeleteMapping(value="/{id}")
 	public void deleteA(@PathVariable Integer id) throws MalformedURLException, URISyntaxException {
 		repository.deleteAuthor(id);
