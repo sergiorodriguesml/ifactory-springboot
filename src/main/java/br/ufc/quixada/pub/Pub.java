@@ -29,46 +29,4 @@ public class Pub {
 
 	private PubTipo tipo;
 
-	// public Pub() {
-	// }
-	//
-	// public Pub(Integer id, Author author, Publisher publisher, Tipo tipo) {
-	// this.id = id;
-	// this.author = author;
-	// this.publisher = publisher;
-	// this.setTipo(tipo);
-	// }
-	//
-	// public Integer getId() {
-	// return id;
-	// }
-	//
-	// public void setId(Integer id) {
-	// this.id = id;
-	// }
-	//
-	// public Author getAuthor() {
-	// return author;
-	// }
-	//
-	// public void setAuthor(Author author) {
-	// this.author = author;
-	// }
-	//
-	// public Publisher getPublisher() {
-	// return publisher;
-	// }
-	//
-	// public void setPublisher(Publisher publisher) {
-	// this.publisher = publisher;
-	// }
-	//
-	// public Tipo getTipo() {
-	// return tipo;
-	// }
-	//
-	// public void setTipo(Tipo tipo) {
-	// this.tipo = tipo;
-	// }
-
 }

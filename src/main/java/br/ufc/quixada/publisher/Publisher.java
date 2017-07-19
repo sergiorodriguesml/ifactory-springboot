@@ -26,35 +26,11 @@ public class Publisher {
 	private Integer id;
 
 	private String nome;
-	
+
 	private String email;
-	
-	@OneToMany(mappedBy="publisher")
+
+	@OneToMany(mappedBy = "publisher")
 	@JsonIgnore
 	private Collection<Pub> publications;
-	
-
-	// public Publisher() {}
-	//
-	// public Publisher(Integer id, String nome) {
-	// this.id = id;
-	// this.nome = nome;
-	// }
-	//
-	// public Integer getId() {
-	// return id;
-	// }
-	//
-	// public void setId(Integer id) {
-	// this.id = id;
-	// }
-	//
-	// public String getNome() {
-	// return nome;
-	// }
-	//
-	// public void setNome(String nome) {
-	// this.nome = nome;
-	// }
 
 }
