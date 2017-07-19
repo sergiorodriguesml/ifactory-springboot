@@ -1,4 +1,4 @@
-package br.ufc.quixada.author;
+package br.ufc.quixada.publisher;
 
 import java.util.Collection;
 
@@ -19,27 +19,26 @@ import lombok.NoArgsConstructor;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-public class Author {
+public class Publisher {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
-	
-	private String firstName;
-	
-	private String lastName;
 
-	@OneToMany(mappedBy="author")
+	private String nome;
+	
+	private String email;
+	
+	@OneToMany(mappedBy="publisher")
 	@JsonIgnore
 	private Collection<Pub> publications;
 	
+
+	// public Publisher() {}
 	//
-	// public Author() {
-	// }
-	//
-	// public Author(Integer id, String firstName, String lastName) {
+	// public Publisher(Integer id, String nome) {
 	// this.id = id;
-	// this.firstName = firstName;
-	// this.lastName = lastName;
+	// this.nome = nome;
 	// }
 	//
 	// public Integer getId() {
@@ -50,20 +49,12 @@ public class Author {
 	// this.id = id;
 	// }
 	//
-	// public String getFirstName() {
-	// return firstName;
+	// public String getNome() {
+	// return nome;
 	// }
 	//
-	// public void setFirstName(String firstName) {
-	// this.firstName = firstName;
-	// }
-	//
-	// public String getLastName() {
-	// return lastName;
-	// }
-	//
-	// public void setLastName(String lastName) {
-	// this.lastName = lastName;
+	// public void setNome(String nome) {
+	// this.nome = nome;
 	// }
 
 }

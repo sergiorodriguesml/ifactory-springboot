@@ -14,8 +14,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import br.ufc.quixada.pub.Pub;
 
 @RestController
 @RequestMapping("/authors")
@@ -38,17 +39,24 @@ public class AuthorController {
 	}
 
 	@DeleteMapping(value="/{id}")
-	public void deleteA(@PathVariable Integer id) throws MalformedURLException, URISyntaxException {
-		repository.deleteAuthor(id);
+	public ResponseEntity<String> deleteA(@PathVariable Integer id) throws MalformedURLException, URISyntaxException {
+		repository.delete(id);
+		return ResponseEntity.ok("Author deletado");
 	}
 	
 	@PutMapping()
-	public void atualizaAuthor(@RequestBody Author author){
-		repository.attAuthor(author);
+	public ResponseEntity<Author> atualizaAuthor(@RequestBody Author author){
+		repository.save(author);
+		return ResponseEntity.ok(author);
 	}
 
 	@GetMapping(value="/{id}")
 	public Author getAuthor(@PathVariable Integer id){
-		return repository.getAuthorByID(id);
+		return repository.findOne(id);
+	}
+	
+	@GetMapping(value = "{id}/pubs")
+	public ResponseEntity<Iterable<Pub>> getPubs(@PathVariable Integer id){
+		return ResponseEntity.ok(repository.findOne(id).getPublications());
 	}
 }
